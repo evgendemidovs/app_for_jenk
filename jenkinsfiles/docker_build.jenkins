@@ -16,7 +16,7 @@ pipeline {
             steps {
                 echo " ============== start building image =================="
                 dir ('docker/toolbox') {
-                	sh 'docker build -t evgendemidovs/myapp:alpinev1 .
+                	sh 'docker build -t evgendemidovs/myapp:alpinev1 .'
 		}
 			}			
 	stage("run docker image"){
