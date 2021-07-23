@@ -24,7 +24,7 @@ pipeline {
 	    steps {
 		echo "running"
 		dir ('docker/toolbox') {
-			sh 'docker run -it -p 1236:8080 --name node-dru4 evgendemidovs/myapp:alpinev1' 
+			sh 'docker run -d -p 1236:8080 --name node-dru5 evgendemidovs/myapp:alpinev1' 
                 }
             }
 	}
