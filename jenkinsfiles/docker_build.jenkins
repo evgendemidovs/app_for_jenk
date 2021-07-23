@@ -16,7 +16,14 @@ pipeline {
             steps {
                 echo " ============== start building image =================="
                 dir ('docker/toolbox') {
-                	sh 'docker build -t toolbox:latest . '
+                	sh 'docker build -t evgendemidovs/myapp:alpinev1 .
+		}
+			}			
+	stage("run docker image"){
+	    steps {
+		echo "running"
+		dir ('docker/toolbox'){
+			sh 'docker run -it -p 1236:8080 --name node-dru4 evgendemidovs/myapp:alpinev1' 
                 }
             }
 	}
